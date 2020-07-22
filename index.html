@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
+
+</head>
+<body>
+    <div class="nav">
+        <header>
+            <h5>Track</h5>
+            <h5> Your </h5>
+            <h5>Expenses</h5>
+        </header>   
+        <ul>
+            <li id="in-button">Sign In</li>
+            <li id="out-button">Sign Out</li>
+            <li id="up-button">Sign Up</li>
+        </ul>
+    </div>
+    
+    <div class="container">
+        <h1>Expense <span>Tracker</span></h1>
+        <ul id="items">
+        </ul>
+        <form id="form">
+            <input type="text" name="item" placeholder="Name of item">
+            <input type="number" name="amount" placeholder="Spent Amount">
+            
+        </form>
+        <div class="buttons">
+        <button id="submit">Add data</button>
+        <button id="total">Get total</button>
+        </div>
+        
+        <div class="message">
+            <h2></h2>
+        </div>
+    </div>
+
+   
+    <div class="modal-bg" id="sign-in-modal">
+    <div class="modal">
+        <h3>Sign In</h3>
+        <form id="sign-in">
+            <input type="email" name="email" placeholder="E-mail">
+            <input type="password" name="password" placeholder="Password">
+            <button>Submit</button>
+        </form>
+        <p id="close-sign-in">x</p>
+    </div>
+    </div>
+
+
+    <div class="modal-bg" id="sign-up-modal">
+        <div class="modal">
+            <h3>Sign Up</h3>
+            <form id="sign-up">
+                <input type="text" name="name" placeholder="Name">
+                <input type="email" id="email" name="email" placeholder="E-mail">
+                <input type="password" id="password" name="password" placeholder="Password">
+                <button>Submit</button>
+            </form>
+            <p id="close-sign-up">X</p>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+    apiKey: "AIzaSyAM1jLl-CU96hsMdyIeE6lsvBvPhDnJx7s",
+    authDomain: "expensetracker2-b7089.firebaseapp.com",
+    databaseURL: "https://expensetracker2-b7089.firebaseio.com",
+    projectId: "expensetracker2-b7089",
+    storageBucket: "expensetracker2-b7089.appspot.com",
+    messagingSenderId: "899287669870",
+    appId: "1:899287669870:web:07b28692fc6897d2f65a7f"
+  };
+
+        
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db=firebase.firestore();
+        const auth=firebase.auth();
+      </script>
+    
+    <script src="modals.js"></script>
+    <script src="auth.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
